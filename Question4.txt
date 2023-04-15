@@ -1,0 +1,60 @@
+Question #4: Checking for Uniqueness
+Write an algorithm that determines whether all the elements in a string are unique. 
+You may not convert the string into an array or use array methods to solve this problem. 
+The algorithm should return a boolean.
+
+Example
+Input: "hello"
+
+Output: false
+
+Input: "copyright"
+
+Output: true
+
+I would like to use JavaScript to answer this. Is that ok?
+I think I see a solution using recursion. I'd like to answer using recursion if that is ok?
+
+1. we'll need to loop through string checking if string at string[0] === string[x], where x increments by 1 at each callback
+  a. If at any point during looping this returns true, we'll exit our function and return false
+
+2. as we're looping, when our index gets to end of string, if there are no duplicates, then we'll return a new str ommitting the element at index 0
+
+TERMINATION CASES:
+  if (typeof str === 'string')
+  if (str === "")
+
+BASE CASE:
+  if (str.length === 1)
+    return str;
+
+Input: "hello"
+
+Output: false
+
+Input: "copyright"
+
+Output: true
+
+const index = 1;
+
+const checkUnique = (str) => {                // str = "t"      index = 1     str.length - 1 = 1
+  return (index) => {
+    if (typeof str !== 'string') {        // f
+      return;
+    } else if (str === "") {              // f
+      return;
+    } else if (str.length === 1) {        // t
+      return true;
+    } else if (str[0] === str[index]) {   // f
+      return false;
+    } else if (index === str.length - 1) {            // t
+      return checkUnique(str.substring(1))(1);
+    } else {
+      return checkUnique(str)(index + 1);
+    }
+  }
+}
+
+
+

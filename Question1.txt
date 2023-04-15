@@ -1,0 +1,67 @@
+Question #1: Turning Strings to URLs
+URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
+
+You may not use the replace() method or regular expressions to solve this problem. Solve the problem with and without recursion.
+
+Example
+Input: "Jasmine Ann Jones"
+
+Output: "Jasmine%20Ann%20Jones"
+
+
+1. Would you like me to solve this with recursion, or a for or foreach loop?
+2. Pseudocode:
+
+RECURSION: 
+
+// will need to loop through str looking for " ", if find a " " replace space with "%20"
+    newString = str.substring(0, str.indexOf(" ") + "%20" + str.substring(str.indexOf(" ") + 1);    // "Jasmine" + "%20" + "Ann Jones"
+
+// BASE CASE: conditional looking to see if str.indexOf(" ") === -1
+    return newString or it returns str;
+
+// error handling
+    if (typeOf str !== 'string')
+    if (str === "")
+
+
+const stringURL = (str) => {        // "Jasmine%20Ann%20Jones"
+  if (typeof str !== 'string') {
+    return "This is not a string";
+  } else if (string === "") {
+    return "This is an empty string";
+  } else if (str.indexOf(" ") === -1) {
+    return str;
+  } else {
+    return stringURL( str.substring(0, str.indexOf(" ")) + "%20" + str.substring(str.indexOf(" ") + 1) );
+  }
+}
+
+FOR or FOREACH loop:
+
+// will need to loop through str, looking for " ", if find a " ", replace with "%20" (percent endoding)
+    newString = str.substring(0, str.indexOf(" ")) + "%20" + str.substring(str.indexOf(" ") + 1);
+
+// BASE CASE = will look for a string that has no " ". If true, then we'll return our new string
+
+// ERROR HANDLING = 
+  if (typeof str !== 'string')
+  if (str === "")
+
+function stringURL(str) {             // "Jasmine Ann Jones"
+  let newString = str;                // "Jasmine%20Ann%20Jones"
+
+  if (typeof newString !== 'string') {   // f
+    return "This is not a string";
+  } else if (newString === "") {        // f
+    return "This is an empty string";
+  } 
+  
+  for (let i = 0; i < newString.length; i++ )     // 
+    if (newString.indexOf(" ") === -1) {        // BASE CASE
+      return newString;
+    } else {    
+      newString = newString.subString(0, newString.indexOf(" ")) + "%20" + newString.subString(newString.indexOf(" ") + 1);
+    }
+  }
+}
