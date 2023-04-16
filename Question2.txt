@@ -31,7 +31,7 @@ const counter2 = 1;
 const arrDeduping = (arr) => {                 // counter1 = 3  // counter2 = 4  // arr = [7, 9, "hi", 12, 53]
   return (counter1) => {
     return (counter2) => {
-      if (typeof arr !== 'object') {         // f
+      if (!Array.isArray(arr)) {         // f
         return;
       } else if (arr.length <= 1) {         // f
         return;
